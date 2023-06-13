@@ -19,6 +19,7 @@ public   void navigateUrl(String url){
 	 try{
 		  driver= getDriver();
 		  driver.get(url);
+		  driver.manage().window().maximize();
 	 }catch(Exception e){
 		 e.printStackTrace();
 	 }
