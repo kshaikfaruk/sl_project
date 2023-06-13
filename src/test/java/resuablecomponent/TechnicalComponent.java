@@ -21,7 +21,6 @@ public   void navigateUrl(String url){
 		  driver= getDriver();
 		  driver.get(url);
 		  driver.manage().window().maximize();
-		  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	 }catch(Exception e){
 		 e.printStackTrace();
 	 }
