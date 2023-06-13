@@ -3,6 +3,7 @@ package resuablecomponent;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -20,6 +21,7 @@ public   void navigateUrl(String url){
 		  driver= getDriver();
 		  driver.get(url);
 		  driver.manage().window().maximize();
+		  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	 }catch(Exception e){
 		 e.printStackTrace();
 	 }
