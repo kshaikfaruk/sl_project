@@ -14,7 +14,7 @@ public class Verifyurl  extends BussinessComponent{
   public void verifyhomepage() throws IOException{
 	 try{
 		 navigateToUrl();
-		 enterdateils("text");
+		 //.driver.("text");
 		 logger.log(LogStatus.PASS, " testcase got passed");
 	logger.log(LogStatus.PASS,	 logger.addScreenCapture(TechnicalComponent.screenshot()));
 	 }catch(Exception e){

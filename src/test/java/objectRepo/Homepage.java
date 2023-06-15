@@ -13,7 +13,7 @@ public class Homepage extends TechnicalComponent {
 		 driver=this.driver;
 		 PageFactory.initElements(driver, this);
 	 }
-	  @FindBy(xpath="//input[@name='q']")
+	  @FindBy(xpath="")
 	   public WebElement element;
 	  
 	   public void entervalue( String text){
