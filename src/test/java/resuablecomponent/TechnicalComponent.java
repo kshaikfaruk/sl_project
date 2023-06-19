@@ -43,6 +43,17 @@ public   void navigateUrl(String url){
 	  }
 }
 	
+ public static String gettext(WebElement element){
+	 String text = null;
+	  try{
+		text=  element.getText();
+		
+	  }catch(Exception e){
+		   e.printStackTrace();
+	  }
+	  return text;
+}
+	
  
  public static String  screenshot() throws IOException{
 	 sr=(TakesScreenshot) driver;

@@ -12,9 +12,12 @@ public class Verifyloginfunctionality extends BussinessComponent {
     	try {
 		 navigateToUrl();
 		 applogin();
+		 verifyproduct();
 		 logger.log(LogStatus.PASS,"testcase is passed");
+		 
 	}catch(Exception e) {
 		logger.log(LogStatus.FAIL,"testcase is failed");
 	}
 }
 }
+ 
