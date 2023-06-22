@@ -35,5 +35,23 @@ public class BussinessComponent extends TechnicalComponent {
 		  product= new Products(driver);
 		  product.addtocart(product.addtocart);
 		  product.verifyaddeditemsvalue(product.addeditemscount);
+		 
+		  
+		  
 	  }
+	  public void verifyproductName() throws Exception {
+		  product=new Products(driver);
+		  product.clickiconcart(product.cartitem);
+		  product.verifyproductname(product.saucelabsbackpack_text);
+		  
+		   }
+	  
+	public void verifyproduct_Price() throws Exception{
+		product=new Products(driver);
+		product.clickiconcart(product.cartitem);
+		product.verifyproductPrice(product.price);
+		
+	}
+		  
+	  
 }
