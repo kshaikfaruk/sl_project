@@ -9,6 +9,9 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.google.common.io.Files;
 
@@ -22,6 +25,13 @@ public   void navigateUrl(String url){
 		  driver.get(url);
 		  driver.manage().window().maximize();
 		  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		  driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+		  String curl=driver.getCurrentUrl();
+		   if(curl.equals(url)) {
+			   System.out.println("passed");
+		   }else {
+			   System.out.println("passed");
+		   }
 	 }catch(Exception e){
 		 e.printStackTrace();
 	 }
@@ -53,7 +63,15 @@ public   void navigateUrl(String url){
 	  }
 	  return text;
 }
+	public  static void waittopageload(WebElement element) {
+		WebDriverWait wait= new WebDriverWait(driver,10);
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
 	
+  public static void Handledropdown(WebElement element,String text) {
+	  Select sc=new Select(element);
+	  sc.selectByVisibleText(text);
+  }
  
  public static String  screenshot() throws IOException{
 	 sr=(TakesScreenshot) driver;

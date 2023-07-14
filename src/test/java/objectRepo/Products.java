@@ -11,30 +11,34 @@ import resuablecomponent.TechnicalComponent;
 
 public class Products extends TechnicalComponent {
 
+	public static final WebElement addtocart = null;
+	public static final String addeditemscount = null;
+	public static final String cartitem = null;
+	public static final String saucelabsbackpack_text = null;
+	public static final String price = null;
+
+
 	public Products(WebDriver driver) {
 		driver=this.driver;
 PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="(//button[@class='btn_primary btn_inventory'])[1]")
-	public WebElement addtocart;
-	
-	@FindBy(xpath="//span[@class='fa-layers-counter shopping_cart_badge']")
-	public WebElement addeditemscount;
-	
+
 	public void addtocart(WebElement element) {
 		TechnicalComponent.click(element);
 		logger.log(LogStatus.PASS, " element clicked");
 	}
+
+
+	public void clickiconcart(String cartitem2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void verifyproductname(String saucelabsbackpackText) {
+		// TODO Auto-generated method stub
+		
+	}
 	
-	 public void verifyaddeditemsvalue(WebElement element) {
-		 String text=TechnicalComponent.gettext(element);
-		 int i=Integer.parseInt(text);
-		 if(i==1) {
-			 logger.log(LogStatus.PASS, "Text is verified");
-		 }else {
-			 logger.log(LogStatus.FAIL,"text is not verified");
-		 }
-		 
-	 }
 }

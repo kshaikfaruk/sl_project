@@ -15,35 +15,30 @@ public class LoginPage extends TechnicalComponent {
 		driver=this.driver;
 		PageFactory.initElements(driver,this);
 	}
-	
-	@FindBy(xpath="//input[@id='user-name']")
-	public WebElement accountname;
-	
-	@FindBy(xpath="//input[@id='password']")
-	public WebElement accountpassword;
-	
-	@FindBy(xpath="//input[@id='login-button']")
-	public WebElement login_button;
-    
-	@FindBy(xpath="//div[contains(text(),'Products')]")
-	public WebElement heading;
+	 @FindBy(xpath="//button[contains(text(),'Customer Login')]")
+	 public WebElement customer_LoginButton;
+	 
+	 @FindBy(xpath="//select[@name=\'userSelect\']")
+	 public WebElement scrolldown;
+	 
+	 @FindBy(xpath="//button[contains(text(),'Login')]")
+	 public WebElement login_Button;
 
-	public void perfromLogin(WebElement accountname, WebElement accountpassword,String username, String password) {
-		TechnicalComponent.type(accountname, username);
-		TechnicalComponent.type(accountpassword, password);
-	}
-	 public void click_loginbutton(WebElement element) {
-		 TechnicalComponent.click(element);
+	 
+	  public void clickonCustomerLoginButton(WebElement element) {
+		  TechnicalComponent.waittopageload(element);
+		  TechnicalComponent.click(element);	  
+	  }
+	 public void selectvaluefromdropdown(WebElement element,String text) {
+		 TechnicalComponent.Handledropdown(element, text);
+		 
 	 }
-	 public void clicked_button(WebElement element) {
-		 TechnicalComponent.click(element);
-	 }
-	 public void verifyproductheading(WebElement element) {
-		String text= TechnicalComponent.gettext(element);
-		if(text.equals("Products")) {
-			logger.log(LogStatus.PASS, "text is verified"+text);
-		}
+
+	
+	 
+
+	
+		
 	 }
 	
-}
 

@@ -9,15 +9,17 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import resuablecomponent.TechnicalComponent;
 
-public class Homepage  extends TechnicalComponent{
+public class Homepage2  extends TechnicalComponent{
 
-	public Homepage(WebDriver driver){
+	public Homepage2(WebDriver driver){
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
 	
 	@FindBy(xpath="//strong[contains(text(),'XYZ Bank')]")
 	public WebElement mainHeading;
+	
+	
 	
 	public void verifyMain_heading(WebElement element,String text) {
 		String actualresult=TechnicalComponent.gettext(element);
